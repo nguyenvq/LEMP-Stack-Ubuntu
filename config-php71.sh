@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 # Settings for PHP7.1-FPM's pool
 FPM_MAX_CHILDREN=10
 FPM_START_SERVERS=4
@@ -17,7 +17,7 @@ service php7.1-fpm stop
     # Change to socket connection for better performance
     sed -i 's/^listen =.*/listen = \/var\/run\/php7.1-fpm.sock/' $php_fpm_conf
 
-#enable the changes 
+#enable the changes
 SPHPFPM="php7.1-fpm"
 SNGINX="nginx"
 
@@ -27,7 +27,7 @@ serviceStatus=`ps aux | grep -v grep | grep $1 | wc -l`
 if [ $serviceStatus == 0 ]
         then
                 echo $1 "is not started...";
-                echo "Trying to start service $1" 
+                echo "Trying to start service $1"
                 if service $2 start >& /dev/null
                         then
                         echo "Service $1 started succesfully..."
@@ -44,3 +44,6 @@ checkIt "nginx" $SNGINX
 checkIt "php-fpm" $SPHPFPM
 # Disable xdebug for php-fpm
 sudo phpdismod -s fpm xdebug
+sudo service $SPHPFPM reload
+
+echo "All done -enjoy !"
