@@ -17,7 +17,7 @@ echo "Installing Laravel into /var/www"
 #getting a Laravel application up and running:
 cd /var/www
 sudo composer create-project laravel/laravel:dev-develop myapp
-touch /etc/nginx/sites-available/default 
+touch /etc/nginx/sites-available/default
 echo '
 server {
     listen 80 default_server;
@@ -37,25 +37,10 @@ server {
        fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
     }
 }
-' > /etc/nginx/sites-available/default 
+' > /etc/nginx/sites-available/default
 chown -R www-data: /var/www/myapp/storage /var/www/myapp/bootstrap
 #Restart Nginx
     service nginx restart
 ############### Setting for PHP
 bash $scriptPath/config-php71.sh
-bash config-mysql.sh 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+bash $scriptPath/config-mysql.sh 

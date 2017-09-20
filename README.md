@@ -3,8 +3,10 @@
 
 ### This will install :
 1. nginx version: nginx/1.13.3
-2. PHP 7.1.9-1+ubuntu16.04.1+deb.sury.org+1 (cli) (built: Sep  2 2017 05:56:43) ( NTS )
+2. PHP 7.1.9-1+ubuntu16.04.1+deb.sury.org+1
 3. Laravel 5.5 on /var/www/myapp
+4. MySQL 5.7.19
+
 
 ## To download and run the script on your server :
 * #cd /usr/local/src
