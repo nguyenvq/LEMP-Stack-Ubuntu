@@ -42,3 +42,5 @@ echo "***********************"
 
 checkIt "nginx" $SNGINX
 checkIt "php-fpm" $SPHPFPM
+# Disable xdebug for php-fpm
+sudo phpdismod -s fpm xdebug
