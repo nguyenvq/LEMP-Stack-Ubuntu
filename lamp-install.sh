@@ -43,4 +43,5 @@ chown -R www-data: /var/www/myapp/storage /var/www/myapp/bootstrap
     service nginx restart
 ############### Setting for PHP
 bash $scriptPath/config-php71.sh
-bash $scriptPath/config-mysql.sh 
+bash $scriptPath/config-mysql.sh
+bash $scriptPath/install-redis.sh
