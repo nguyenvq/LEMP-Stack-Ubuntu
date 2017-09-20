@@ -7,8 +7,8 @@
 3. Laravel 5.5 on /var/www/myapp
 
 ## To download and run the script on your server :
-*#cd /usr/local/src
-*#git clone  https://github.com/bajula/LAMP-Stack-Ubuntu.git
-*#cd /LAMP-Stack-Ubuntu
-*#chmod +x *.sh
-*#./lamp-install.sh
+* #cd /usr/local/src
+* #git clone  https://github.com/bajula/LAMP-Stack-Ubuntu.git
+* #cd /LAMP-Stack-Ubuntu
+* #chmod +x *.sh
+* #./lamp-install.sh
