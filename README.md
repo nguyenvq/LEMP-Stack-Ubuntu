@@ -10,5 +10,5 @@ To download and run the script on your server :
 cd /usr/local/src 
 git clone  https://github.com/bajula/LAMP-Stack-Ubuntu.git
 cd /LAMP-Stack-Ubuntu 
-chmod +x lamp-install.sh 
-./install.sh 
+chmod +x *.sh 
+./lamp-install.sh 
