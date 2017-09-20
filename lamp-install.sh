@@ -1,4 +1,6 @@
 #!/bin/bash
+scriptPath=$PWD
+
 # add php7 and nginx repos
 sudo add-apt-repository -y ppa:nginx/development
 sudo add-apt-repository -y ppa:ondrej/php
@@ -39,10 +41,8 @@ server {
 chown -R www-data: /var/www/myapp/storage /var/www/myapp/bootstrap
 #Restart Nginx
     service nginx restart
-
-
 ############### Setting for PHP
-bash config-php71.sh
+bash $scriptPath/config-php71.sh
 bash config-mysql.sh 
     
     
