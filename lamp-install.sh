@@ -42,4 +42,5 @@ server {
 ' > /etc/nginx/sites-available/default 
 
 chown -R www-data: /var/www/myapp/storage /var/www/myapp/bootstrap
-
+#Restart Nginx
+    service nginx restart
