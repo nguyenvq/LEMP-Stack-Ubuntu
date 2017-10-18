@@ -1,5 +1,5 @@
-# LAMP-Stack-Ubuntu
-## LAMP stack install for Ubuntu 16.04.**
+# LEMP-Stack-Ubuntu
+## LEMP stack install for Ubuntu 16.04.**
 
 ### This will install :
 1. nginx version: nginx/1.13.3
@@ -10,7 +10,7 @@
 
 ## To download and run the script on your server :
 * #cd /usr/local/src
-* #git clone  https://github.com/bajula/LAMP-Stack-Ubuntu.git
-* #cd /LAMP-Stack-Ubuntu
+* #git clone  https://github.com/bajula/LEMP-Stack-Ubuntu.git
+* #cd /LEMP-Stack-Ubuntu
 * #chmod +x *.sh
-* #./lamp-install.sh
+* #./lemp-install.sh
