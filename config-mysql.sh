@@ -56,9 +56,9 @@ sudo apt purge -y  expect
 
 echo "Create database for Laravel app "
 
-function create_db () {
+function create-laravel-db () {
   /usr/bin/mysqladmin -u root -p $DB_ROOT create database $DB_NAME charset utf8mb4;
-  /usr/bin/mysqladmin -u root -p $DB_ROOT create user $DB_USER@$DB_HOSTNAME identified by $DB_PASSWORD;
+  /usr/bin/mysqladmin -u root -p $DB_ROOT create user $DB_USER@$localhost identified by $DB_PASSWORD;
   /usr/bin/mysqladmin -u root -p $DB_ROOT grant all privileges on $DB_NAME.* to $DB_USER@$DB_HOSTNAME;
   /usr/bin/mysqladmin -u root -p $DB_ROOT flush privileges;
 }
