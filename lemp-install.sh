@@ -53,6 +53,6 @@ sleep 5
 echo "Installing Redis"
 /bin/bash $scriptPath/install-redis.sh
 sleep 5
-echo "Installing Mysql "
-/bin/bash $scriptPath/config-mysql.sh
+#echo "Installing Mysql "
+#/bin/bash $scriptPath/config-mysql.sh
 
