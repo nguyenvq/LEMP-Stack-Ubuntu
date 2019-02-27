@@ -1,5 +1,5 @@
 #!/bin/bash
-# Settings for PHP7.1-FPM's pool
+# Settings for PHP7.2-FPM's pool
 FPM_MAX_CHILDREN=10
 FPM_START_SERVERS=4
 FPM_MIN_SPARE_SERVERS=2
@@ -13,8 +13,8 @@ PHP_MAX_INPUT_TIME=300
 PHP_POST_MAX_SIZE=25M
 PHP_UPLOAD_MAX_FILESIZE=25M
 
-service php7.1-fpm stop
-    php_fpm_conf="/etc/php/7.1/fpm/pool.d/www.conf"
+service php7.2-fpm stop
+    php_fpm_conf="/etc/php/7.2/fpm/pool.d/www.conf"
     # Limit FPM processes
     sed -i 's/^pm.max_children.*/pm.max_children = '${FPM_MAX_CHILDREN}'/' $php_fpm_conf
     sed -i 's/^pm.start_servers.*/pm.start_servers = '${FPM_START_SERVERS}'/' $php_fpm_conf
@@ -22,10 +22,10 @@ service php7.1-fpm stop
     sed -i 's/^pm.max_spare_servers.*/pm.max_spare_servers = '${FPM_MAX_SPARE_SERVERS}'/' $php_fpm_conf
     sed -i 's/\;pm.max_requests.*/pm.max_requests = '${FPM_MAX_REQUESTS}'/' $php_fpm_conf
     # Change to socket connection for better performance
-    sed -i 's/^listen =.*/listen = \/var\/run\/php7.1-fpm.sock/' $php_fpm_conf
+    sed -i 's/^listen =.*/listen = \/var\/run\/php7.2-fpm.sock/' $php_fpm_conf
 
 #enable the changes
-SPHPFPM="php7.1-fpm"
+SPHPFPM="php7.2-fpm"
 SNGINX="nginx"
 
 function checkProcess()
@@ -53,7 +53,7 @@ checkProcess "php-fpm" $SPHPFPM
 sudo phpdismod -s fpm xdebug
 sudo service $SPHPFPM reload
 
-php_ini_dir="/etc/php/7.1/fpm/php.ini"
+php_ini_dir="/etc/php/7.2/fpm/php.ini"
     # Tweak php.ini based on input in options.conf
     sed -i 's/^max_execution_time.*/max_execution_time = '${PHP_MAX_EXECUTION_TIME}'/' $php_ini_dir
     sed -i 's/^memory_limit.*/memory_limit = '${PHP_MEMORY_LIMIT}'/' $php_ini_dir
