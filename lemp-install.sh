@@ -21,6 +21,9 @@ echo "Installing Laravel into /var/www"
 echo "Installing Laravel application into /var/www/myapp"
 cd /var/www
 sudo composer create-project laravel/laravel:dev-develop myapp
+echo "Setting ENV"
+cd /var/www/myapp
+cp .env.example .env
 echo "Configuring Nginx for Laravel myapp "
 touch /etc/nginx/sites-available/default
 echo '
