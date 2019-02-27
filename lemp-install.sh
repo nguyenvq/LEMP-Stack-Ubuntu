@@ -11,8 +11,8 @@ sudo apt-get install -y git tmux vim curl wget zip unzip htop
 echo "Installing Nginx"
 sudo apt-get install -y nginx
 # PHP
-echo "Installing PHP 7.1"
-sudo apt-get install -y php7.1-fpm php7.1-cli php7.1-mcrypt php7.1-gd php7.1-mysql php7.1-pgsql php7.1-imap php-memcached php7.1-mbstring php7.1-xml php7.1-curl php7.1-bcmath php7.1-sqlite3 php7.1-xdebug
+echo "Installing PHP 7.2"
+sudo apt-get install -y php7.2-fpm php7.2-cli php7.2-mcrypt php7.2-gd php7.2-mysql php7.2-pgsql php7.2-imap php-memcached php7.2-mbstring php7.2-xml php7.2-curl php7.2-bcmath php7.2-sqlite3 php7.2-xdebug
 # Composer
 echo "Installing Composer"
 php -r "readfile('http://getcomposer.org/installer');" | sudo php -- --install-dir=/usr/bin/ --filename=composer
@@ -39,7 +39,7 @@ server {
 
     location ~ \.php$ {
        include snippets/fastcgi-php.conf;
-       fastcgi_pass unix:/var/run/php7.1-fpm.sock;
+       fastcgi_pass unix:/var/run/php7.2-fpm.sock;
     }
 }
 ' > /etc/nginx/sites-available/default
@@ -48,11 +48,10 @@ chown -R www-data: /var/www/myapp/storage /var/www/myapp/bootstrap
     service nginx restart
 ############### Setting for PHP
 echo "Setting php "
-/bin/bash $scriptPath/config-php71.sh
+/bin/bash $scriptPath/config-php72.sh
 sleep 5
 echo "Installing Redis"
 /bin/bash $scriptPath/install-redis.sh
 sleep 5
 #echo "Installing Mysql "
 #/bin/bash $scriptPath/config-mysql.sh
-
